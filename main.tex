@@ -1,199 +1,205 @@
-%% start of file `template.tex'.
-%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Graduate Curriculum Vitae
+% LaTeX Template
+% Version 1.2 (3/28/15)
 %
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License version 1.3c,
-% available at http://www.latex-project.org/lppl/.
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Rensselaer Polytechnic Institute 
+% (http://www.rpi.edu/dept/arc/training/latex/resumes/)
+%
+% Modified by:
+% Daniel L Marks <xleafr@gmail.com> 3/28/2015
+%
+% Important note:
+% This template requires the res.cls file to be in the same directory as the
+% .tex file. The res.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%-------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
 
-\documentclass[11pt,a4paper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can have multiple style options the legal options ones are:
+%
+%   centered:	the name and address are centered at the top of the page 
+%				(default)
+%
+%   line:		the name is the left with a horizontal line then the address to
+%				the right
+%
+%   overlapped:	the section titles overlap the body text (default)
+%
+%   margin:		the section titles are to the left of the body text
+%		
+%   11pt:		use 11 point fonts instead of 10 point fonts
+%
+%   12pt:		use 12 point fonts instead of 10 point fonts
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% modern themes
-\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\documentclass[margin]{res}  
 
-% character encoding
-\usepackage[utf8]{inputenc}
-\usepackage{fontawesome}
-\usepackage{fontspec}
-\usepackage{tabularx}
-\usepackage{ragged2e}
-% if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+% Default font is the helvetica postscript font
+\usepackage{helvet}
 
-% adjust the page margins
-\usepackage[scale=0.8]{geometry}
-\usepackage{multicol}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% Increase text height
+\textheight=700pt
 
-\usepackage{import}
-
-% personal data
-\name{Victor}{Delaplaine}
-% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
-\address{500 College Ave, Swarthmore, PA 19081 }{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
-% \phone[mobile]{909-839-3097}                   % optional, remove / comment the line if not wanted
-% \phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
-%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
-% \email{xpan1@swarthmore.edu}                               % optional, remove / comment the line if not wanted
-% \homepage{shawnpan.me}                         % optional, remove / comment the line if not wanted
-% \extrainfo{}                 % optional, remove / comment the line if not wanted
-%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
-
-% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
-%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
-
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-  
-\newcommand*{\customcventry}[7][.25em]{
-  \begin{tabular}{@{}l} 
-    {\bfseries #4}
-  \end{tabular}
-  \hfill% move it to the right
-  \begin{tabular}{l@{}}
-     {\bfseries #5}
-  \end{tabular} \\
-  \begin{tabular}{@{}l} 
-    {\itshape #3}
-  \end{tabular}
-  \hfill% move it to the right
-  \begin{tabular}{l@{}}
-     {\itshape #2}
-  \end{tabular}
-  \ifx&#7&%
-  \else{\\%
-    \begin{minipage}{\maincolumnwidth}%
-      \small#7%
-    \end{minipage}}\fi%
-  \par\addvspace{#1}}
-
-\newcommand*{\customcvproject}[4][.25em]{
-%   \vfill\noindent
-  \begin{tabular}{@{}l} 
-    {\bfseries #2}
-  \end{tabular}
-  \hfill% move it to the right
-  \begin{tabular}{l@{}}
-     {\itshape #3}
-  \end{tabular}
-  \ifx&#4&%
-  \else{\\%
-    \begin{minipage}{\maincolumnwidth}%
-      \small#4%
-    \end{minipage}}\fi%
-  \par\addvspace{#1}}
-
-\setlength{\tabcolsep}{12pt}
-
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
-%-----       resume       ---------------------------------------------------------
-\makecvtitle
-\vspace*{-23mm}
 
-\begin{center}
-\begin{tabular}{ c c c c }
- \faGlobe\enspace mysite.me & \faEnvelopeO\enspace vdelapla@calpoly.edu & \faGithub\enspace ByVictorrr & \faMobile\enspace 650-740-6691\\  
-\end{tabular}
-\end{center}
+%-------------------------------------------------------------------------------
+%	NAME AND ADDRESS SECTION
+%-------------------------------------------------------------------------------
+\name{Victor Delaplaine}
+
+% Note that addresses can be used for other contact information:
+% -phone numbers
+% -email addresses
+% -linked-in profile
+
+\address{
+\\Website : web.calpoly.edu/~vdelapla/
+\\LinkedIn : www.linkedin.com/in/victor-delaplaine
+\\Github : www.github.com/ByVictorrr\\
+}
+\address{vdelapla@calpoly.edu \\(+650) 740-6691\\}
+
+% Uncomment to add a third address
+%\address{Address 3 line 1\\Address 3 line 2\\Address 3 line 3}
+%-------------------------------------------------------------------------------
+
+\begin{resume}
+
+%-------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%-------------------------------------------------------------------------------
+\section{OBJECTIVE}
+{\sl Junior Student. Computer Engineering Student at Cal Poly. Inquisitive, hard-working and consistent. Looking for internship opportunities at Tesla where I can apply my skills and contribute to real-world projects }
 
 \section{EDUCATION}
-{\customcventry{Expected Graduation: June 2020}{BS in Computer Engineering GPA: 3.9/4.0}{California Polytechnic State}{San Luis Obispo, CA}{}{}}
+\textbf{California Polytechnic State University}, San Luis Obispo\\
+{\sl Bachelor of Science (BS)}, Computer Engineering(CPE)\\
+Expected June, 2020
+\hfill CGPA: 3.9/4.00 
+
+%-------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%-------------------------------------------------------------------------------
+\section{TECHNICAL\\SKILLS}
+
+\textbf{Programming: } Shell, C++, Java, Verilog
+\\
+\textbf{Database and Markdown :} MySQL, MarkDown, LaTex, html
+\\
+\textbf{Familiar : } Python, Matlab, CSS, Regular expressions
+\\
+\textbf{General : } Data Structures, Algorithm, Object Oriented Programming,
+\\ \tab Digital Design, Unix/Linux, vim 
+
+%-------------------------------------------------------------------------------
+% Modify the format of each position
+\begin{format}
+\title{l}\\
+\dates{l}\location{r}\\
+\body\\
+\end{format}
+%-------------------------------------------------------------------------------
 
 \section{EXPERIENCE}
 
-{\customcventry{June 2018 - August 2018}{Machine Learning Intern}{San Francisco State}{San Francisco, CA}{}
-{\begin{itemize}
-  \item Integrated calendar invitations into Mailbox, allowing RSVP responses without leaving the app
+\textbf{San Francisco State : Machine learning lead intern \hfill{June 18 - August 18}\\}
+\normalfont{Developing an android application in java - that reads EMG signals and demodulates them into gestures, output ed to the display. I helped with setting up the EC2 AWS server to get a working SQL base for large amounts of data need to store.}
+\begin{itemize}
+\item \textbf{Link :} github.com/alexanderadavid/Myo-HMI-Android
 \end{itemize}
-}
-
-{\customcventry{June 2017 – Aug 2017}{Software Engineer Intern}{Amazing Company 2}{San Francisco, CA}{}
-{\begin{itemize}
-  \item Analyzed the best implementation for the calendar system, researching relevant APIs and RFCs
-that would create a practical integration. Included extensive testing among existing providers
-  \item Worked full-stack across Mailbox systems, from the iOS app in Objective-C/C++11 to several backend systems in Node.js/CoffeeScript. Required quickly picking up different environments
-  \item Constructed a load testing framework in Scala using Gatling to generate dummy ad impression data for testing a MapReduce pipeline
-\end{itemize}
-}
-
-{\customcventry{Jan 2016 – June 2016}{Backend Engineer}{Amazing Company 3}{Remote}{}
-{\begin{itemize}
-  \item Developed an ETL pipeline to aggregate data from Hadoop HDFS using Apache Spark and Cloudera Impala, resulting in a \textasciitilde5x speed improvement over the existing Pig/Hive/Oozie pipeline
-  \item Reworked a reporting system to work on-demand using Amazon Redshift, resulting in a 1 hour decrease in total overnight ETL job duration
-  \item Migrated push notifications to AWS SNS, saving 98\% in push-related costs
-\end{itemize}
-}
 
 \section{PROJECTS}
 
-{\customcvproject{Amazing Project 1}{Aug 2017 - Present}
-  {\begin{itemize}
-    \item Ran custom Minecraft mods on CentOS and Debian servers
-    \item Reverse engineered obfuscated Java using a decompiler and reflection
-  \end{itemize}
-  }
-}
-
-{\customcvproject{Amazing Project 2}{Feb 2016 – May 2017}
-{\begin{itemize}
-  \item Began a group to create the first 36 hour student-run hackathon ever held at Illinois
-  \item Led 50 staff to raise \$175,000 for HackIllinois, managing relationships with 60+ sponsors
-  \item Plan events to increase social interaction among ACM members, as well as events to foster the spirit of computer science at Illinois
+% Project 1
+\employer{ByVictorrr}
+\location{}
+\title{\textbf{aProjector - Autofocusing Projector \hfill September 2018}}
+\begin{position}
+% \begin{itemize}
+  The aProjector, was a invention of me and a peer. I had just taken optics at the time so I was interested and did the physics, getting the equations related it to the the system - programming. I typed up the program in C++ that this program is the ROM on the arduino, it controls the motor to turn the stepper motor a given angle, needed to focus the phone on the frame to focus the image produced on the wall.
+% \end{itemize}https://www.overleaf.com/project/5c3cda8d86f90560469d48be
+\begin{itemize}
+\item \textbf{Technology/Tools:} C++ 
 \end{itemize}
-}
-
-{\customcvproject{Amazing Project 3}{Jan 2015 – May 2015}
-{\begin{itemize}
-  \item Assist in recruiting potential and admitted students to the UIUC computer science program
-  \item Attend information sessions, admitted student Q\&A’s, and student lunches to generate interest in the Illinois Computer Science department
+\begin{itemize}
+\item \textbf{Link :} github.com/byvictorrr/aProjector
 \end{itemize}
-}
-}
-
-\section{ADDITIONAL}
-\begin{minipage}{\maincolumnwidth}%
-	\small{
-    	\begin{itemize}
-          \item Relevant Coursework: Data Structures and Algorithms, Natural Language Processing, Computer Systems, Databases, Computer Security, Abstract Algebra
-          \item President of XYZ Club, Public Relations Manager of Swarthmore QWE Club
-          \item Programming Languages: Python, C, C++, PHP, Java, HTML/CSS, Javascript, jQuery, NodeJS
-          \item Fluent in Gibberish, conversational in Nonsense
-		\end{itemize}}%
-\end{minipage}%
-      
-}
-% Publications from a BibTeX file without multibib
-%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
-%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                        % 'publications' is the name of a BibTeX file
-
-% Publications from a BibTeX file using the multibib package
-%\section{Publications}
-%\nocitebook{book1,book2}
-%\bibliographystylebook{plain}
-%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
-
-%-----       letter       ---------------------------------------------------------
-
-\end{document}
+\end{position}
 
 
-%% end of file `template.tex'.
+
+%Project 2
+\employer{ByVictorrr}
+\location{}
+\title{\textbf{ RPI Camera EC2 Backup - Autonomous backup  \hfill December 2018}}
+\begin{position}
+% \begin{itemize}
+This project was intended for my dad, I built him a security for Christmas using a raspberry pi zero. This camera is viewed from its public IP address - port forwarding port 80. I setup a AWS Linux server to backup the recordings every day to be put on the server, and wipe all the recordings on raspberry pi. This is the lack due to the RPI zero. I learned how to use rsync and cronnie how to schedule shell scripts and remotely backup files to another machine.
+% \end{itemize}https://www.overleaf.com/project/5c3cda8d86f90560469d48be
+\begin{itemize}
+\item \textbf{Technology/Tools: cron, AWS Linux server, ssh, rsync, port forwarding}
+\end{itemize}
+\begin{itemize}
+\item \textbf{Link :} github.com/byvictorrr/RPI-Camera-EC2-Backup
+\end{itemize}
+\end{position}
+
+%Project 3
+\employer{ByVictorrr}
+\location{}
+\title{\textbf{WindowsServerCalpolyStudents - For UNIX users  \hfill January 2019}}
+\begin{position}
+% \begin{itemize}
+For UNIX UNIX users of any type of operator system that is in need of a windows machine. This could be for anyone who doesn't have enough memory to use a virtual box or dual boot. Intended for Cal Poly EE - students that use mac OS or Linux, because all the EE software is mostly functional on Windows.
+% \end{itemize}https://www.overleaf.com/project/5c3cda8d86f90560469d48be
+\begin{itemize}
+\item \textbf{Technology/Tools: gitbash, RPD - protocol, AWS, powershell}
+\end{itemize}
+\begin{itemize}
+\item \textbf{Link :} github.com/byvictorrr/WindowServerCalpolyStudents
+\end{itemize}
+\end{position}
+
+\section{CERTIFICATION}
+\par
+\normalfont{}
+\\
+\normalfont{\textbullet{} \textbf{Computer Science - C++ Certificate of Achievement} by Ca\tilde{n}ada College
+\\ 
+\textbullet{} \textbf{Engineering - Certificate of Achievement} by \hspace{2pt} Ca\tilde{n}ada \hspace{2pt}College 
+
+
+\section{RELEVANT\\COURSES}
+\par
+
+\normalfont{\textbullet{} Digital Design: github.com/byvictorrr/CPE133 }
+\\
+\normalfont{\textbullet{} Object Orientated Programming in Java: github.com/byvictorrr/CPE203 }
+\\
+\normalfont{\textbullet{} Object Orientated Programming in C++: https://github.com/ByVictorrr/Sudoku }
+\\
+\normalfont{\textbullet{} Data Structures in C++: https://github.com/ByVictorrr/GhostGame}
+\\
+
+
+
+\section{ADDITIONAL ACTIVITIES}
+
+\normalfont{ \textbullet{} , I like to watch videos on vim scripting}
+
+%-------------------------------------------------------------------------------
+
+
+\end{resume}
+\(\)\end{document}
