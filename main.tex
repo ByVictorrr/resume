@@ -21,25 +21,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%       PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %-------------------------------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % You can have multiple style options the legal options ones are:
 %
-%   centered:	the name and address are centered at the top of the page 
-%				(default)
+%   centered:   the name and address are centered at the top of the page 
+%                               (default)
 %
-%   line:		the name is the left with a horizontal line then the address to
-%				the right
+%   line:               the name is the left with a horizontal line then the address to
+%                               the right
 %
-%   overlapped:	the section titles overlap the body text (default)
+%   overlapped: the section titles overlap the body text (default)
 %
-%   margin:		the section titles are to the left of the body text
-%		
-%   11pt:		use 11 point fonts instead of 10 point fonts
+%   margin:             the section titles are to the left of the body text
 %
-%   12pt:		use 12 point fonts instead of 10 point fonts
+%   11pt:               use 11 point fonts instead of 10 point fonts
+%
+%   12pt:               use 12 point fonts instead of 10 point fonts
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -54,7 +54,7 @@
 \begin{document}
 
 %-------------------------------------------------------------------------------
-%	NAME AND ADDRESS SECTION
+%       NAME AND ADDRESS SECTION
 %-------------------------------------------------------------------------------
 \name{Victor Delaplaine}
 
@@ -77,10 +77,10 @@
 \begin{resume}
 
 %-------------------------------------------------------------------------------
-%	EDUCATION SECTION
+%       EDUCATION SECTION
 %-------------------------------------------------------------------------------
 \section{OBJECTIVE}
-{\sl Junior Student. Computer Engineering Student at Cal Poly. Inquisitive, hard-working and consistent. Looking for internship opportunities at Tesla where I can apply my skills and contribute to real-world projects }
+{\sl Junior level Computer Engineering Student at Cal Poly. Inquisitive, hard-working and consistent. Looking for internship opportunities where I can apply my skills and contribute to real-world projects.}
 
 \section{EDUCATION}
 \textbf{California Polytechnic State University}, San Luis Obispo\\
@@ -89,18 +89,17 @@ Expected June, 2020
 \hfill CGPA: 3.9/4.00 
 
 %-------------------------------------------------------------------------------
-%	COMPUTER SKILLS SECTION
+%       COMPUTER SKILLS SECTION
 %-------------------------------------------------------------------------------
 \section{TECHNICAL\\SKILLS}
 
 \textbf{Programming: } Shell, C++, Java, Verilog
 \\
-\textbf{Database and Markdown :} MySQL, MarkDown, LaTex, html
+\textbf{ Markdown :} MarkDown, LaTex, html
 \\
-\textbf{Familiar : } Python, Matlab, CSS, Regular expressions
+\textbf{Familiar : } Matlab, CSS, MySQL, Regular Expressions
 \\
-\textbf{General : } Data Structures, Algorithm, Object Oriented Programming,
-\\ \tab Digital Design, Unix/Linux, vim 
+\textbf{General : }Data Structures, Object Oriented Programming, Digital Design, Unix tools
 
 %-------------------------------------------------------------------------------
 % Modify the format of each position
@@ -114,12 +113,29 @@ Expected June, 2020
 \section{EXPERIENCE}
 
 \textbf{San Francisco State : Machine learning lead intern \hfill{June 18 - August 18}\\}
-\normalfont{Developing an android application in java - that reads EMG signals and demodulates them into gestures, output ed to the display. I helped with setting up the EC2 AWS server to get a working SQL base for large amounts of data need to store.}
+\\
+\normalfont{ I woked on an android application in java - that reads EMG signals and demodulates them into gestures, to the display. I helped with setting up the EC2 AWS server to get a working SQL base for large amounts of data need to store.}
+
+\begin{itemize}
+\item \textbf{Tools :} MySQL, teamwork, AWS, research and presenting
+\end{itemize}
 \begin{itemize}
 \item \textbf{Link :} github.com/alexanderadavid/Myo-HMI-Android
 \end{itemize}
 
-\section{PROJECTS}
+\textbf{ Canada College: STEM tutor \hfill{January 18 - June 18}\\}
+\\
+\normalfont{I was a Math, Physics, Engineering, and Computer science tutor. \\ I loved helping student suceed, by showing them how to solve a problem step by step.}
+\begin{itemize}
+\item \textbf{Tools :} Teaching
+\end{itemize}
+\begin{itemize}
+\item \textbf{Link :} https://www.canadacollege.edu/stemcenter/ 
+\end{itemize}
+
+
+
+\section{RECENT PROJECTS}
 
 % Project 1
 \employer{ByVictorrr}
@@ -127,10 +143,10 @@ Expected June, 2020
 \title{\textbf{aProjector - Autofocusing Projector \hfill September 2018}}
 \begin{position}
 % \begin{itemize}
-  The aProjector, was a invention of me and a peer. I had just taken optics at the time so I was interested and did the physics, getting the equations related it to the the system - programming. I typed up the program in C++ that this program is the ROM on the arduino, it controls the motor to turn the stepper motor a given angle, needed to focus the phone on the frame to focus the image produced on the wall.
+  The aProjector, was a invention of me and a peer, simply its a projector which projects a phones screen on the wall and autofocuses it. I used the thin lens equation as a basis to devlope a program written in C++ run on the Arduino Mega 2560. This Arudino controls the motor to turn the stepper motor a given angle needed to produce a clear image on the wall.
 % \end{itemize}https://www.overleaf.com/project/5c3cda8d86f90560469d48be
 \begin{itemize}
-\item \textbf{Technology/Tools:} C++ 
+\item \textbf{Technology/Tools:} C++, LaTex
 \end{itemize}
 \begin{itemize}
 \item \textbf{Link :} github.com/byvictorrr/aProjector
@@ -145,10 +161,10 @@ Expected June, 2020
 \title{\textbf{ RPI Camera EC2 Backup - Autonomous backup  \hfill December 2018}}
 \begin{position}
 % \begin{itemize}
-This project was intended for my dad, I built him a security for Christmas using a raspberry pi zero. This camera is viewed from its public IP address - port forwarding port 80. I setup a AWS Linux server to backup the recordings every day to be put on the server, and wipe all the recordings on raspberry pi. This is the lack due to the RPI zero. I learned how to use rsync and cronnie how to schedule shell scripts and remotely backup files to another machine.
+This project was intended for my father, I set up a Raspberry pi zero as a security camera. I noticed that there was not enough memory to store all the videos so I created this project. I setup a AWS Linux server to backup the recordings from the security camera, and the script wipes all the recordings the camera I learned how to use rsync and cronnie how to schedule shell scripts and remotely backup files to another machine.
 % \end{itemize}https://www.overleaf.com/project/5c3cda8d86f90560469d48be
 \begin{itemize}
-\item \textbf{Technology/Tools: cron, AWS Linux server, ssh, rsync, port forwarding}
+\item \textbf{Technology/Tools: cron, AWS, ssh, rsync, port forwarding}
 \end{itemize}
 \begin{itemize}
 \item \textbf{Link :} github.com/byvictorrr/RPI-Camera-EC2-Backup
@@ -161,7 +177,7 @@ This project was intended for my dad, I built him a security for Christmas using
 \title{\textbf{WindowsServerCalpolyStudents - For UNIX users  \hfill January 2019}}
 \begin{position}
 % \begin{itemize}
-For UNIX UNIX users of any type of operator system that is in need of a windows machine. This could be for anyone who doesn't have enough memory to use a virtual box or dual boot. Intended for Cal Poly EE - students that use mac OS or Linux, because all the EE software is mostly functional on Windows.
+This was more of a tutorial for my fellow classmates that didnt have windows. Using an AWS EC2 windows server for school intended needs - EE software.
 % \end{itemize}https://www.overleaf.com/project/5c3cda8d86f90560469d48be
 \begin{itemize}
 \item \textbf{Technology/Tools: gitbash, RPD - protocol, AWS, powershell}
@@ -175,9 +191,9 @@ For UNIX UNIX users of any type of operator system that is in need of a windows 
 \par
 \normalfont{}
 \\
-\normalfont{\textbullet{} \textbf{Computer Science - C++ Certificate of Achievement} by Ca\tilde{n}ada College
+\normalfont{}\textbullet{} \textbf{Computer Science - C++ Certificate of Achievement} by Canada College
 \\ 
-\textbullet{} \textbf{Engineering - Certificate of Achievement} by \hspace{2pt} Ca\tilde{n}ada \hspace{2pt}College 
+\textbullet{} \textbf{Engineering - Certificate of Achievement} by Canada College 
 
 
 \section{RELEVANT\\COURSES}
@@ -191,14 +207,6 @@ For UNIX UNIX users of any type of operator system that is in need of a windows 
 \\
 \normalfont{\textbullet{} Data Structures in C++: https://github.com/ByVictorrr/GhostGame}
 \\
-
-
-
-\section{ADDITIONAL ACTIVITIES}
-
-\normalfont{ \textbullet{} , I like to watch videos on vim scripting}
-
-%-------------------------------------------------------------------------------
 
 
 \end{resume}
